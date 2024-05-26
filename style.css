@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+}
+.card {
+  background: #ffffff;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.274);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 350px;
+  height: 460px;
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img{
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  text-transform: uppercase;
+  text-shadow: 4px 2px 6px rgba(0, 0, 0, 0.338);
+  text-align: center;
+  margin-top: 80px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.card-text {
+  text-align: center;
+  margin: 10px 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+div#resultado{
+  margin-top: 20px;
+  text-align: left;
+}
+
+.card-button {
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  margin-top: 40px;
+  margin-top: 40px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+/*--------------Tablets-----------------*/
+@media screen and (min-width: 768px){
+  .card {
+    width: 500px;
+    height: 420px;
+  }
+}
