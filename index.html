@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>VLSM</title>
+    <link rel="shortcut icon" href="img/cepnsa-logo.png" type="image/x-icon">
+    <title>VLSM | MakeneDev</title>
 </head>
 
 <body>
     <div class="card">
         <div class="card-content">
-            <img src="img/logo.jpg" alt="logo">
-            <h2 class="card-title">VLSM</h2>
-            <p class="card-text">Eu sou <strong>Makene Neto</strong> estudante da Anunciação e aluno do <strong>Hernâni da Silva</strong>, fiz esse projeto com o intuito de facilitar o calculo de VLSM.</p>
+            <abbr title="Makene José Furtado Neto"><img src="img/logo.jpg" alt="logo"></abbr>
+            <h2 class="card-title"><abbr title="Variable Length Subnet Mask">VLSM</abbr></h2>
+            <p class="card-text">Eu sou <strong>Makene Neto</strong> estudante da Anunciação e aluno do <strong>Hernani da Silva</strong>, fiz esse projeto com o intuito de facilitar o calculo de VLSM.</p>
             <div id="resultado">
                 <p>Número de PCs: <b><span id="npc">0</span></b></p>
                 <p>Máscara de Sub-rede: <b>255.255.255.<span id="ligados">0</span>/<span id="pref">0</span></b></p>
@@ -22,6 +23,7 @@
             </div>
 
             <button class="card-button" onclick="calcular()">Calcular</button>
+            <input type="reset" value="Limpar" class="reset-button" onclick="limpar()">
         </div>
     </div>
 
@@ -29,39 +31,3 @@
 </body>
 
 </html>
-
-
-<!---<script> 
-        function saudar() {
-            // Obtém a hora atual
-            let agora = new Date();
-            let horas = agora.getHours();
-            let saudacao;
-
-            // Determina a saudação com base na hora
-            if (horas < 12) {
-                saudacao = "Bom dia";
-            } else if (horas < 18) {
-                saudacao = "Boa tarde";
-            } else {
-                saudacao = "Boa noite";
-            }
-
-            // Solicita o nome do usuário
-            let nome = prompt("Qual é o seu nome?");
-            
-            // Verifica se o nome não é vazio ou nulo
-            if (nome) {
-                // Cria a saudação personalizada
-                let mensagem = `${saudacao}, ${nome}! Seja bem-vindo(a)!`;
-                
-                // Exibe a saudação em um alerta
-                alert(mensagem);
-                
-                // Também exibe a saudação na página
-                document.getElementById("saudacao").innerText = mensagem;
-            } else {
-                alert("Por favor, insira um nome válido.");
-            }
-        }
-    </script>
