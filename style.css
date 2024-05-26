@@ -9,13 +9,20 @@ body {
   background-color: #f0f0f0;
   font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
 }
+
+abbr{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
 .card {
   background: #ffffff;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.274);
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   width: 350px;
-  height: 460px;
+  height: 480px;
   transition: transform 0.5s;
 }
 
@@ -52,12 +59,14 @@ div#resultado{
 }
 
 .card-button {
-  display: block;
-  margin: auto;
+  display: inline;
+  margin-left:50px;
+  margin-right: 10px;
+  margin-bottom: 20px;
   padding: 10px 20px;
   margin-top: 40px;
   margin-top: 40px;
-  background-color: #007BFF;
+  background-color: #35c908;
   color: white;
   border: none;
   border-radius: 5px;
@@ -68,13 +77,39 @@ div#resultado{
 }
 
 .card-button:hover {
-  background-color: #0056b3;
+  background-color: #207a05;
+}
+
+.reset-button{
+  display: inline;
+  padding: 10px 20px;
+  margin-top: 40px;
+  margin-top: 40px;
+  background-color: #f02222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover{
+  background-color: #a21717;
 }
 
 /*--------------Tablets-----------------*/
 @media screen and (min-width: 768px){
   .card {
     width: 500px;
-    height: 440px;
+    height: 456px;
+  }
+
+  .card-button {
+    display: inline;
+    margin-left: 125px;
+    margin-right: 10px;
+    margin-bottom: 20px;
   }
 }
