@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/cepnsa-logo.png" type="image/x-icon">
+    <title>VLSM | MakeneDev</title>
+</head>
+
+<body>
+    <div class="container">
+        <section class="wrapper">
+            <div class="heading">
+                <h1 class="text-large">VLSM</h1>
+                <p class="description">Eu sou <strong><a href="https://www.instagram.com/n.makeny/" target="_blank" class="person">Makene Neto</a></strong>, estudante do colégio Nossa Senhora da Anunciação e aluno do <strong><a href="https://www.facebook.com/mo.galao.1" target="_blank" class="person">Hernani da Silva</a></strong>, fiz esse projeto para facilitar o cálculo de VLSM.</p>
+            </div>
+
+            <div class="form">
+                <div class="input-control">
+                    <input type="text" name="endereco-ip" id="ip" class="input-field" placeholder="Endereço IP" autocomplete="on">
+                </div>
+
+                <div class="input-control">
+                    <input type="number" name="npcs" id="pcs" class="input-field" placeholder="Nº de Pc's" min="2" max="126" autocomplete="on">
+                </div>
+                <div class="input-control">
+                    <button class="input-submit" onclick="calculateSubnetMask()">Calcular</button>
+                    <button class="input-reset" onclick="clearFields()">Limpar</button>
+                </div>
+                <p class="text text-normal">Deseja voltar para <span><a href="https://makene-ip.vercel.app/ " target="_self" class="text text-links">Cálculo de Endereço IP</a></span> ?</p>
+            </div>
+
+            <div id="resultados">
+                <!---Número de PCs--->
+                <p class="title" id="numPcs"></p> 
+                <div class="result" id="qtdPcs"></div>
+
+                <!---Máscara de Sub-rede--->
+                <p class="title" id="mascara"></p> 
+                <div class="result" id="result"></div>
+
+                <!---Número de hosts--->
+                <p class="title" id="numHosts"></p> 
+                <div class="result" id="hosts"></div>
+
+                <!---Disperdício--->
+                <p class="title" id="numDisper"></p> 
+                <div class="result" id="disper"></div>
+            </div>
+            <!-- Toggle Dark Mode Button -->
+            <div class="toggle-dark-mode" onclick="toggleDarkMode()"></div>
+        </section>
+    </div>
+    <!------192.168.252.15---->
+    <script src="main.js"></script>
+</body>
+
+</html>
