@@ -65,6 +65,10 @@ body{
     text-align: center;
 }
 
+.person{
+    color: var(--color-blue);
+}
+
 .person:hover{
     text-decoration: underline;
 }
