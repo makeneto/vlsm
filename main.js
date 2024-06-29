@@ -3,24 +3,71 @@ function calculateSubnetMask() {
     const ip = document.getElementById('ip').value;
     let pcs = parseInt(document.getElementById('pcs').value);
 
-    if (!validateIP(ip)) {
-        mascara.innerHTML = '<p class="erro">⚠️Endereço IP inválido!</p>';
-        document.getElementById('result').innerHTML = '';
-        document.getElementById('numHosts').innerHTML = '';
-        document.getElementById('hosts').innerHTML = '';
-        document.getElementById('numDisper').innerHTML = '';
-        document.getElementById('disper').innerHTML = '';
+    function validateIP(ip) {
+        const ipPattern = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        return ipPattern.test(ip);
     }
-    else if (isNaN(pcs) || pcs < 2 || pcs > 126) {
-        mascara.innerHTML = '<p class="erro">⚠️Coloque um número de PCs válido e dentro do intervalo de 2 a 126.</p>';
-        document.getElementById('result').innerHTML = '';
-        document.getElementById('numHosts').innerHTML = '';
-        document.getElementById('hosts').innerHTML = '';
-        document.getElementById('numDisper').innerHTML = '';
-        document.getElementById('disper').innerHTML = '';
-    }
-    else {
 
+    if (ip == '' && isNaN(pcs)){
+        mascara.innerHTML = '<p class="erro">Por favor, Preencha os campos☝🏽.</p>';
+        document.querySelector('.striped').innerHTML = '';
+        document.getElementById('numPcs').innerHTML = '';
+        document.getElementById('qtdPcs').innerHTML = '';
+        document.getElementById('result').innerHTML = '';
+        document.getElementById('numHosts').innerHTML = '';
+        document.getElementById('hosts').innerHTML = '';
+        document.getElementById('numDisper').innerHTML = '';
+        document.getElementById('disper').innerHTML = '';
+    }
+
+    else if (ip == ''){
+        mascara.innerHTML = '<p class="erro">Por favor, Introduza o endereço IP☝🏽.</p>';
+        document.querySelector('.striped').innerHTML = '';
+        document.getElementById('numPcs').innerHTML = '';
+        document.getElementById('qtdPcs').innerHTML = '';
+        document.getElementById('result').innerHTML = '';
+        document.getElementById('numHosts').innerHTML = '';
+        document.getElementById('hosts').innerHTML = '';
+        document.getElementById('numDisper').innerHTML = '';
+        document.getElementById('disper').innerHTML = '';
+    }
+    else if (!validateIP(ip)) {
+        mascara.innerHTML = '<p class="erro">⚠️Endereço IP inválido!</p>';
+        document.querySelector('.striped').innerHTML = '';
+        document.getElementById('numPcs').innerHTML = '';
+        document.getElementById('qtdPcs').innerHTML = '';
+        document.getElementById('result').innerHTML = '';
+        document.getElementById('numHosts').innerHTML = '';
+        document.getElementById('hosts').innerHTML = '';
+        document.getElementById('numDisper').innerHTML = '';
+        document.getElementById('disper').innerHTML = '';
+    }
+
+    else if(isNaN(pcs)){
+        mascara.innerHTML = '<p class="erro">Por favor, Introduza o Número de PCs☝🏽.</p>';
+        document.querySelector('.striped').innerHTML = '';
+        document.getElementById('numPcs').innerHTML = '';
+        document.getElementById('qtdPcs').innerHTML = '';
+        document.getElementById('result').innerHTML = '';
+        document.getElementById('numHosts').innerHTML = '';
+        document.getElementById('hosts').innerHTML = '';
+        document.getElementById('numDisper').innerHTML = '';
+        document.getElementById('disper').innerHTML = '';
+    }
+
+    else if (pcs < 2 || pcs > 126) {
+        mascara.innerHTML = '<p class="erro">⚠️Coloque um número de PCs válido e dentro do intervalo de 2 a 126.</p>';
+        document.querySelector('.striped').innerHTML = '';
+        document.getElementById('numPcs').innerHTML = '';
+        document.getElementById('qtdPcs').innerHTML = '';
+        document.getElementById('result').innerHTML = '';
+        document.getElementById('numHosts').innerHTML = '';
+        document.getElementById('hosts').innerHTML = '';
+        document.getElementById('numDisper').innerHTML = '';
+        document.getElementById('disper').innerHTML = '';
+    }
+
+    else {
         if (pcs == 2) {
             ligados = 4 + 8 + 16 + 32 + 64 + 128;
             desligados = 2;
@@ -28,8 +75,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -46,8 +94,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -65,8 +114,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -83,8 +133,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -101,8 +152,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -119,8 +171,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -137,6 +190,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
+
+            textResultado.style.display = 'flex';
 
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
@@ -159,8 +215,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -177,8 +234,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -195,8 +253,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -213,8 +272,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -231,8 +291,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -249,8 +310,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -267,8 +329,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -288,8 +351,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -306,8 +370,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -324,8 +389,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -342,8 +408,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -360,8 +427,9 @@ function calculateSubnetMask() {
             hosts = (Math.pow(2, desligados) - 2);
             resto = hosts - pcs;
             disperdicio = Number(resto);
+            const textResultado = document.querySelector('.striped');
 
-
+            textResultado.style.display = 'flex';
             document.getElementById('numPcs').innerHTML = 'Número de PCs';
             document.getElementById('qtdPcs').innerHTML = pcs;
             document.getElementById('mascara').innerHTML = 'Máscara de Sub-rede';
@@ -374,9 +442,36 @@ function calculateSubnetMask() {
     }
 }
 
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+window.addEventListener("offline", (event) => {
+    const estado = document.getElementById('card');
+    const calculator = document.querySelector('.wrapper');
+    calculator.style.display = 'none';
+
+    console.log("Sem Internet");   
+    console.log(event);
+    
+    estado.style.display = 'block';
+})
+
+window.addEventListener("online", (event) => {
+    const estado = document.getElementById('card');
+    const calculator = document.querySelector('.wrapper');
+    calculator.style.display = 'block';
+
+    console.log("Com Internet");   
+    console.log(event);
+    
+    estado.style.display = 'none';
+})
+
 function clearFields() {
     document.getElementById('ip').value = '';
     document.getElementById('pcs').value = '';
+    document.querySelector('.striped').innerHTML = '';
     document.getElementById('numPcs').innerHTML = '';
     document.getElementById('qtdPcs').innerHTML = '';
     document.getElementById('mascara').innerHTML = '';
@@ -385,13 +480,4 @@ function clearFields() {
     document.getElementById('hosts').innerHTML = '';
     document.getElementById('numDisper').innerHTML = '';
     document.getElementById('disper').innerHTML = '';
-}
-
-function validateIP(ip) {
-    const ipPattern = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-    return ipPattern.test(ip);
-}
-
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
 }
