@@ -29,7 +29,13 @@
                     <button class="input-submit" onclick="calculateSubnetMask()">Calcular</button>
                     <button class="input-reset" onclick="clearFields()">Limpar</button>
                 </div>
-                <p class="text text-normal">Deseja voltar para <span><a href="https://makene-ip.vercel.app/ " target="_self" class="text text-links">Cálculo de Endereço IP</a></span> ?</p>
+                <p class="text text-normal back">Deseja voltar para <span><a href="https://makene-ip.vercel.app/ " target="_self" class="text text-links">Cálculo de Endereço IP</a></span> ?</p>
+            </div>
+
+            <div class="striped">
+                <div class="striped-line"></div>
+                <div class="striped-text">Resultado</div>
+                <div class="striped-line"></div>
             </div>
 
             <div id="resultados">
@@ -53,7 +59,16 @@
             <div class="toggle-dark-mode" onclick="toggleDarkMode()"></div>
         </section>
     </div>
-    <!------192.168.252.15---->
+    
+    <!-------- Estado on/offline --------->
+    <div id="card">
+        <p class="card-title">Sem Conexão com a Internet❌📶</p>
+        <p class="card-body">
+            Parece que você está sem conexão com a internet no momento. Para acessar todo o conteúdo e funcionalidades desta página, por favor, verifique sua conexão e tente novamente.
+        </p>
+        <p class="footer">Escrito por <span class="by-name">Makene Neto</p>
+    </div>
+
     <script src="main.js"></script>
 </body>
 
