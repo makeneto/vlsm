@@ -199,11 +199,37 @@ body{
     background: #b80808;
 }
 
+.striped{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.striped-line{
+    flex: auto;
+    flex-basis: auto;
+    height: 2px;
+    background: #0fd85c92;
+}
+
+.striped-text{
+    font-size: 17px;
+    font-weight: bold;
+    color: #0fd85c;
+    margin: 0 1rem;
+}
+
 .title{
     text-align: center;
     color: rgb(0, 0, 0);
     font-size: 19px;
     font-weight: bold;
+    margin-bottom: 0;
+}
+
+
+#disper{
     margin-bottom: 0;
 }
 
@@ -336,6 +362,10 @@ body.dark-mode .input-reset:hover{
     transition: 0.3s;
 }
 
+body.dark-mode .striped-text{
+    color: #0DFF6A;
+}
+
 body.dark-mode .title{
     color: rgb(255, 255, 255);
 }
@@ -361,6 +391,56 @@ body.dark-mode .no-border{
 body.dark-mode .erro {
     background: #c51515;
     color: var(--color-black);
+}
+
+/* -------------ON/OFFLINE MODE------------ */
+
+#card {
+    display: none;
+    overflow-x: auto;
+    max-width: 60rem;
+    width: 350px;
+    padding: 20px;
+    min-height: 270px;
+    border-radius: 20px;
+    background: #e8e8e8;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: 0.4s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.card:hover {
+    translate: 0 -10px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f60909;
+    margin: 15px 0 0 10px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.card-body {
+    margin: 13px 0 0 10px;
+    color: rgb(31, 31, 31);
+    font-size: 15px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.footer {
+    float: right;
+    margin: 28px 0 0 18px;
+    font-size: 13px;
+    color: #636363;
+}
+
+.by-name {
+    font-weight: 700;
 }
 
 /* Toggle Dark Mode Button */
