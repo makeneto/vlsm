@@ -434,4 +434,15 @@ body.dark-mode .toggle-dark-mode::after {
     img{
         width: 120px;
     }
+
+/* Copyright */
+#copyright{
+    margin-bottom: 0;
+    align-items: center;
+}
+
+.copyright{
+    font-size: 11px;
+    text-align: center;
+}
 }
