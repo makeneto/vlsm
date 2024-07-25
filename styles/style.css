@@ -47,7 +47,7 @@ body{
     max-width: 60rem;
     width: 600px;
     margin: 2rem auto;
-    padding: 2rem 2.5rem;
+    padding: 1rem 2.5rem 10px;
     border: none;
     outline: none;
     border-radius: 0.25rem;
@@ -434,6 +434,7 @@ body.dark-mode .toggle-dark-mode::after {
     img{
         width: 120px;
     }
+}
 
 /* Copyright */
 #copyright{
@@ -444,5 +445,4 @@ body.dark-mode .toggle-dark-mode::after {
 .copyright{
     font-size: 11px;
     text-align: center;
-}
 }
