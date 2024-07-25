@@ -1,2 +1,1 @@
-
-<img width="960" alt="Captura de ecrã 2024-05-26 171935" src="https://github.com/makeneto/vlsm/assets/130509472/0f21335c-00d5-4689-a0e4-a879212a4eff">
+![Captura de ecrã 2024-07-25 200716](https://github.com/user-attachments/assets/c7f1acd3-ab14-4e05-92f7-7f154200ff74)
